@@ -1,6 +1,6 @@
 ﻿@model AutomovilesViewModel
 @{
-  ViewData["Title"] = "Manage your todo list";
+  ViewData["Title"] = "Services History";
 }
 <div class="panel panel-default todo-panel">
 	<div class="panel-heading">@ViewData["Title"]</div>
@@ -8,8 +8,9 @@
 			<thead>
 				<tr>
 					<td>&#x2714;</td>
-					<td>Item</td>
-					<td>Due</td>
+					<td>Marca</td>
+					<td>Model</td>
+					<td>Año</td>
 				</tr>
 		  </thead>
 		  @foreach (var item in Model.Items)
@@ -18,8 +19,9 @@
 				<td>
 					<input type="checkbox" class="done-checkbox">
 				</td>
-				<td>@item.Title</td>
-				<td>@item.DueAt</td>
+				<td>@item.Marca</td>
+				<td>@item.Modelo</td>
+				<td>@item.FechaFabricacion</td>
 			</tr>
 		  }
 	  </table>

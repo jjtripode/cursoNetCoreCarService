@@ -17,13 +17,10 @@ namespace CarServiceFronted.Controllers
             var item2 =new Automovil(){Marca="Fiat", Modelo="Siena", FechaFabricacion=DateTime.Now.AddYears(-5)};
             
 
-            var items = AutomovilesViewModel();
+            var items = new AutomovilesViewModel();
             items.Items = new []{item1, item2};
             
-            return Index(items);
-
+            return View(items);
         }
-
-      
     }
 }

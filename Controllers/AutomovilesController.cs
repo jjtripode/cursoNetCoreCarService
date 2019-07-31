@@ -12,12 +12,12 @@ namespace CarServiceFronted.Controllers
     {
         public IActionResult Index()
         {
-            var item1 =new Automovil(){Marca="Peugeot", Modelo="207", FechaFabricacion=DateTime.Now.AddYears(-11)};
+            var item1 =new Car(){Brand="Peugeot", Model="207", Date=DateTime.Now.AddYears(-11)};
 
-            var item2 =new Automovil(){Marca="Fiat", Modelo="Siena", FechaFabricacion=DateTime.Now.AddYears(-5)};
+            var item2 =new Car(){Brand="Fiat", Model="Siena", Date=DateTime.Now.AddYears(-5)};
             
 
-            var items = new AutomovilesViewModel();
+            var items = new CarViewModel();
             items.Items = new []{item1, item2};
             
             return View(items);

@@ -1,4 +1,4 @@
-﻿@model AutomovilesViewModel
+﻿@model CarViewModel
 @{
   ViewData["Title"] = "Services History";
 }
@@ -19,9 +19,22 @@
 				<td>
 					<input type="checkbox" class="done-checkbox">
 				</td>
-				<td>@item.Marca</td>
-				<td>@item.Modelo</td>
-				<td>@item.FechaFabricacion</td>
+				<td>@item.Brand</td>
+				<td>@item.Model</td>
+				<td>@item.Date</td>
+			
+		 @foreach (var service in @item.Services)
+		  {
+			<tr>
+				
+				<td>@service.Description</td>
+				<td>@service.Date</td>
+				<td>@service.Cost</td>
+				<td>@service.Status</td>
+			</tr>
+		  }
+			
+			
 			</tr>
 		  }
 	  </table>

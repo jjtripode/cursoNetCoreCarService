@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CursoNetCoreCarService.Entities;
+using CursoNetCoreCarService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -36,7 +37,7 @@ services.AddDbContext<AppDbContext>(options=>
               options.UseSqlite(
                             Configuration.GetConnectionString("DefaultConnection")));
 
-            // services.AddScoped<ITodoItemService, TodoItemServiceAsync>();
+             services.AddScoped<ICarServices, CarServicesAsync>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

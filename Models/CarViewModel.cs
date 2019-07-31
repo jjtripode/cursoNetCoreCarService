@@ -1,9 +1,10 @@
+
 using System;
 
 namespace CarServiceFronted.Models
 {
-    public class AutomovilesViewModel
+    public class CarViewModel
     {
-        public Automovil[] Items { get; set; }
+        public Car[] Items { get; set; }
     }
 }

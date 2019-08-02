@@ -9,5 +9,6 @@ namespace CursoNetCoreCarService.Services
          Task<Car[]> GetCarsAsync();
 
           Task<CarService[]> GetServicesAsync();
+          Task<bool> AddCarAsync(Car car);
     }
 }

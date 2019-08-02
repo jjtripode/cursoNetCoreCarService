@@ -22,7 +22,7 @@
 				<td>@item.Brand</td>
 				<td>@item.Model</td>
 				<td>@item.Date</td>
-			
+		@if(@item.Services!= null){	
 		 @foreach (var service in @item.Services)
 		  {
 			<tr>
@@ -33,12 +33,12 @@
 				<td>@service.Status</td>
 			</tr>
 		  }
-			
+			}
 			
 			</tr>
 		  }
 	  </table>
   <div class="panel-footer add-item-form">
-  <!-- TODO: Add item form -->
+  @await Html.PartialAsync("AddCarPartial", new Car())
   </div>
 </div>

@@ -24,14 +24,29 @@ namespace CarServiceFronted.Controllers
 
             // var item2 =new Car(){Brand="Fiat", Model="Siena", Date=DateTime.Now.AddYears(-5),
             // Services = Enumerable.Range(1,3).Select( e=> new CarService(){Description="service",Date=DateTime.Now,Cost=123,Status="Pending"}).ToList() };
-            
+
 
             // var items = new CarViewModel();
             // items.Items = new []{item1, item2};
             var items = await _service.GetCarsAsync();
 
-             return View(new CarViewModel(){ Items =items});
+            return View(new CarViewModel() { Items = items });
 
+        }
+
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddCar(Car car)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            var successful = await _service.AddCarAsync(car);
+            if (!successful)
+            {
+                return BadRequest("Could not add item.");
+            }
+            return RedirectToAction("Index");
         }
     }
 }

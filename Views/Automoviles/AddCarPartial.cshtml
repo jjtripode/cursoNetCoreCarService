@@ -1,0 +1,13 @@
+@model Car
+<form asp-action="AddCar" method="POST">
+<label asp-for="Brand">Marca:</label>
+<input asp-for="Brand">
+
+<label asp-for="Model">Model:</label>
+<input asp-for="Model">
+
+<label asp-for="Date">Fecha Fabricacion:</label>
+<input asp-for="Date">
+
+<button type="submit">Add</button>
+</form>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using CarServiceFronted.Models;
 
-namespace CursoNetCoreCarService.Extensions {
+namespace CarServiceFronted.Extensions {
     public static class Extensions {
-       public static string GetNextCarServices (this Car car) {
+       public static string GetNextCarServices (this Vehicle car) {
 
             if (car.Services != null && car.Services.Any() &&
                 car.Services.Any (s => s.Status == "Pending")) {

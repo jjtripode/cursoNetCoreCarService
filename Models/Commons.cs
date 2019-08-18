@@ -1,8 +1,8 @@
-namespace cursoNetCoreCarService.Models
+namespace CarServiceFronted.Models
 {
     public class Commons
     {
-        public enum CarServiceStatus
+        public enum ServiceStatus
         {
             Pending = 1,
             InProgress = 10,

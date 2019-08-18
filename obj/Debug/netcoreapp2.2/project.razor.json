@@ -2968,8 +2968,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Automoviles\\AddCarPartial.cshtml",
-      "TargetPath": "Views\\Automoviles\\AddCarPartial.cshtml",
+      "FilePath": "Views\\Automoviles\\AddVehiclePartial.cshtml",
+      "TargetPath": "Views\\Automoviles\\AddVehiclePartial.cshtml",
       "FileKind": "mvc"
     },
     {

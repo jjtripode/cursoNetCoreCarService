@@ -37,7 +37,7 @@ services.AddDbContext<AppDbContext>(options=>
               options.UseSqlite(
                             Configuration.GetConnectionString("DefaultConnection")));
 
-             services.AddScoped<ICarServices, CarServicesAsync>();
+             services.AddScoped<IVehicleServices, VehicleServices>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -64,7 +64,7 @@ services.AddDbContext<AppDbContext>(options=>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Automoviles}/{action=Index}/{id?}");
+                    template: "{controller=Vehicles}/{action=Index}/{id?}");
             });
         }
     }

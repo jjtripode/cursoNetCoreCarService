@@ -1,4 +1,4 @@
-@model Car
+@model AddVehicleViewModel
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -17,9 +17,9 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         </button>
       </div>
       <div class="modal-body">
-       <form asp-action="AddCar" method="POST">
+       <form asp-action="AddVehicle" method="POST">
 
-         <div class="form-group">
+         <!-- <div class="form-group">
             <label for="Brand" asp-for="Brand" class="col-form-label">Marca22</label>
             <input asp-for="Brand">
           </div>
@@ -32,7 +32,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="form-group">
             <label for="Date" asp-for="Date" class="col-form-label">Fecha Fabricacion</label>
           <input asp-for="Date">>
-          </div>
+          </div> -->
 
 </form>
 

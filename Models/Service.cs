@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CursoNetCoreCarService.Models
+namespace CarServiceFronted.Models
 {
-    public class CarService
+    public class Service
     {
          [Key]
         public Guid ID
@@ -12,7 +12,7 @@ namespace CursoNetCoreCarService.Models
         }
         public string Description { get; set; }
         public DateTime Date{get;set;}
-        public decimal Cost { get; set; }
+        public decimal Price { get; set; }
         public string Status{ get; set; }
     }
 }

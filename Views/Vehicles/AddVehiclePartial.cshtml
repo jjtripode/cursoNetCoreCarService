@@ -1,4 +1,4 @@
-@model Car
+@model AddVehicleViewModel
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Agregar
@@ -15,20 +15,19 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="form-group">
-                        <label for="Brand" asp-for="Brand" class="col-form-label">Marca</label>
-                        <input asp-for="Brand">
-                    </div>
+            <div class="col-sm-6">
+                <label asp-for="BrandId" class="control-label">Modelo:</label>
+                <select asp-for="BrandId" asp-items="@(new SelectList(Model.Brands,"Id","Descripcion"))" class="form-control"></select>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="ModelId" class="control-label">Modelo:</label>
+                <select asp-for="ModelId" asp-items="@(new SelectList(Model.Models,"Id","Descripcion"))" class="form-control"></select>
+            </div>
 
                     <div class="form-group">
-                        <label for="Model" asp-for="Model" class="col-form-label">Marca</label>
-                        <input asp-for="Model">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="Date" asp-for="Date" class="col-form-label">Fecha Fabricacion</label>
-                        <input asp-for="Date">
-                    </div>
+                        <label for="ManufacturingDate" asp-for="ManufacturingDate" class="col-form-label">Fecha Fabricacion</label>
+                        <input asp-for="ManufacturingDate">
+                    </div> -->
 
                 </div>
                 <div class="modal-footer">

@@ -7,7 +7,6 @@ D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.As
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.TagHelpers.input.cache
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.TagHelpers.output.cache
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.RazorCoreGenerate.cache
-D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Automoviles\Index.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
@@ -29,5 +28,6 @@ D:\Practicas\CursoNetCoreCarService\bin\Debug\netcoreapp2.2\CarServiceFronted.Vi
 D:\Practicas\CursoNetCoreCarService\bin\Debug\netcoreapp2.2\CarServiceFronted.Views.pdb
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.Views.pdb
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.csproj.CopyComplete
-D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Automoviles\AddCarPartial.g.cshtml.cs
-D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Automoviles\AddServicePartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\AddServicePartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\AddVehiclePartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\Index.g.cshtml.cs

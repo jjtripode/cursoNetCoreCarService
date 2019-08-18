@@ -1,4 +1,8 @@
 ﻿@model CarViewModel
+@using System.Linq;
+@using cursoNetCoreCarService.Models;
+@using CursoNetCoreCarService.Extensions;
+
 @{
   ViewData["Title"] = "Services History";
 }
@@ -11,6 +15,8 @@
 					<td>Marca</td>
 					<td>Model</td>
 					<td>Año</td>
+					<td>Service</td>
+					<td>Agregar</td>
 				</tr>
 		  </thead>
 		  @foreach (var item in Model.Items)
@@ -22,22 +28,13 @@
 				<td>@item.Brand</td>
 				<td>@item.Model</td>
 				<td>@item.Date</td>
-		@if(@item.Services!= null){	
-		 @foreach (var service in @item.Services)
-		  {
-			<tr>
-				
-				<td>@service.Description</td>
-				<td>@service.Date</td>
-				<td>@service.Cost</td>
-				<td>@service.Status</td>
-			</tr>
-		  }
-			}
-			
+				<td>@item.GetNextCarServices()</td>
+				<td>agregar</td>
+		
 			</tr>
 		  }
 	  </table>
+
   <div class="panel-footer add-item-form">
   @await Html.PartialAsync("AddCarPartial", new Car())
   </div>

@@ -30,3 +30,4 @@ D:\Practicas\CursoNetCoreCarService\bin\Debug\netcoreapp2.2\CarServiceFronted.Vi
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.Views.pdb
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.csproj.CopyComplete
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Automoviles\AddCarPartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Automoviles\AddServicePartial.g.cshtml.cs

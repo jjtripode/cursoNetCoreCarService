@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarServiceFronted.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190818193015_AllEntities")]
-    partial class AllEntities
+    [Migration("20190819144241_allEntities")]
+    partial class allEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,25 +25,19 @@ namespace CarServiceFronted.Migrations
 
                     b.Property<string>("Descripcion");
 
-                    b.Property<Guid?>("ModelsID");
+                    b.Property<string>("models");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("ModelsID");
 
                     b.ToTable("Brands");
-                });
 
-            modelBuilder.Entity("CarServiceFronted.Models.Model", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Descripcion");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Models");
+                    b.HasData(
+                        new
+                        {
+                            ID = new Guid("31fb55d6-7b1b-4006-97a1-3fd605289908"),
+                            Descripcion = "Renault",
+                            models = "Captur,Clio,Clio Grandtour,Espace,Express,Fluence,Grand Espace,Grand Modus,Grand Scenic,Kadjar,Kangoo,Kangoo Express,Koleos,Laguna,Laguna Grandtour,Latitude,Mascott,Mégane,Mégane CC,Mégane Combi,Mégane Grandtour,Mégane Coupé,Mégane Scénic,Scénic,Talisman,Talisman Grandtour,Thalia,Twingo,Wind,Zoé"
+                        });
                 });
 
             modelBuilder.Entity("CarServiceFronted.Models.Service", b =>
@@ -84,25 +78,25 @@ namespace CarServiceFronted.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("ec96d8f2-4973-4e3e-858b-47746e7c6465"),
+                            ID = new Guid("41e251ca-732f-491f-805d-958d3897c5a4"),
                             Descripcion = "Pending   ",
                             IdStatus = 10
                         },
                         new
                         {
-                            ID = new Guid("27755942-a6a3-45aa-915d-bb26cf5e1a4e"),
+                            ID = new Guid("43b70a54-c8a6-4a2c-bc61-e3549000dc2e"),
                             Descripcion = "InProgress",
                             IdStatus = 20
                         },
                         new
                         {
-                            ID = new Guid("2647a3c7-3e6e-40ea-b08f-3748bf288ac9"),
+                            ID = new Guid("dd638e75-2148-4bde-8092-0116e158faee"),
                             Descripcion = "Delayed   ",
                             IdStatus = 30
                         },
                         new
                         {
-                            ID = new Guid("2982e717-fe5f-4009-9c27-e61445dcbde5"),
+                            ID = new Guid("d012c4a6-a04e-4938-9efc-ad14a70fc5a0"),
                             Descripcion = "Ended     ",
                             IdStatus = 40
                         });
@@ -113,28 +107,17 @@ namespace CarServiceFronted.Migrations
                     b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("BrandID");
+                    b.Property<string>("Brand");
 
                     b.Property<string>("CarLicensePlate");
 
                     b.Property<DateTime>("ManufacturingDate");
 
-                    b.Property<Guid?>("ModelID");
+                    b.Property<string>("Model");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("BrandID");
-
-                    b.HasIndex("ModelID");
-
                     b.ToTable("Vehicles");
-                });
-
-            modelBuilder.Entity("CarServiceFronted.Models.Brand", b =>
-                {
-                    b.HasOne("CarServiceFronted.Models.Model", "Models")
-                        .WithMany()
-                        .HasForeignKey("ModelsID");
                 });
 
             modelBuilder.Entity("CarServiceFronted.Models.Service", b =>
@@ -142,17 +125,6 @@ namespace CarServiceFronted.Migrations
                     b.HasOne("CarServiceFronted.Models.Vehicle")
                         .WithMany("Services")
                         .HasForeignKey("VehicleID");
-                });
-
-            modelBuilder.Entity("CarServiceFronted.Models.Vehicle", b =>
-                {
-                    b.HasOne("CarServiceFronted.Models.Brand", "Brand")
-                        .WithMany()
-                        .HasForeignKey("BrandID");
-
-                    b.HasOne("CarServiceFronted.Models.Model", "Model")
-                        .WithMany()
-                        .HasForeignKey("ModelID");
                 });
 #pragma warning restore 612, 618
         }

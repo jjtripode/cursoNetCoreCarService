@@ -1,39 +1,50 @@
-﻿@model VehicleViewModel;
+﻿@model VehicleViewModel; 
 @using CarServiceFronted.Extensions;
-
-@{
-  ViewData["Title"] = "Services History";
-}
+ @{ ViewData["Title"] = "Services History"; }
 <div class="panel panel-default todo-panel">
-	<div class="panel-heading">@ViewData["Title"]</div>
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<td>&#x2714;</td>
-					<td>Marca</td>
-					<td>Model</td>
-					<td>Año</td>
-					<td>Service</td>
-					<td>Agregar</td>
-				</tr>
-		  </thead>
-		  @foreach (var item in Model.Items)
-		  {
-			<tr>
-				<td>
-					<input type="checkbox" class="done-checkbox">
-				</td>
-				<td>@item.Brand.Descripcion</td>
-				<td>@item.Model.Descripcion</td>
-				<td>@item.ManufacturingDate</td>
-				<td>@item.GetNextCarServices()</td>
-				<td>agregar</td>
-		
-			</tr>
-		  }
-	  </table>
-
-  <div class="panel-footer add-item-form">
-  @await Html.PartialAsync("AddVehiclePartial", new AddVehicleViewModel())
-  </div>
+    <div class="panel-heading">@ViewData["Title"]</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>&#x2714;</td>
+                <td>Marca</td>
+                <td>Model</td>
+                <td>Año</td>
+                <td>Patente</td>
+                <td>Service</td>
+                <td></td>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Items) {
+        <tr>
+            <td>
+                <input type="checkbox" class="done-checkbox">
+            </td>
+            <td>@item.Brand</td>
+            <td>@item.Model</td>
+            <td>@item.ManufacturingDate</td>
+            <td>@item.CarLicensePlate</td>
+            <td>@item.GetNextCarServices()</td>
+       
+            <td> @await Html.PartialAsync("AddServicePartial", new AddServiceViewModel())</td>
+       
+            
+        </tr>
+        }
+    </table>
+    <div class="panel-footer add-item-form">
+        @await Html.PartialAsync("AddVehiclePartial", Model.AddVehicleViewModel)
+    </div>
 </div>
+
+
+@section Scripts{
+
+	<script type="text/javascript">
+		$('#datepicker').datepicker({
+			format: 'dd/mm/yyyy',
+			uiLibrary: 'bootstrap4'
+		});
+
+	</script>
+	}	

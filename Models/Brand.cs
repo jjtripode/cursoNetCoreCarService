@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarServiceFronted.Models
 {
@@ -12,7 +13,15 @@ namespace CarServiceFronted.Models
         }
 
         public string Descripcion { get; set; }
+        public string models { get; set; }
 
-        public Model Models { get; set; }
+        [NotMapped]
+        public string[] Models
+        {
+            get
+            {
+                return models.Split(',');
+            }
+        }
     }
 }

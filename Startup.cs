@@ -38,6 +38,7 @@ services.AddDbContext<AppDbContext>(options=>
                             Configuration.GetConnectionString("DefaultConnection")));
 
              services.AddScoped<IVehicleServices, VehicleServices>();
+             services.AddScoped<IBrandServices, BrandServices>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

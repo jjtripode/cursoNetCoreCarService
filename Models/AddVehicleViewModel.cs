@@ -1,15 +1,14 @@
 using System;
-using System.Collections.Generic;
 
 namespace CarServiceFronted.Models
 {
     public class AddVehicleViewModel
     {
-        public IList<Brand> Brands { get; set; }
-        public Guid BrandId { get; set; }
+        public Brand[] Brands { get; set; }
+        public string Brand { get; set; }
 
-        public IList<Model>  Models { get; set; }   
-        public Guid ModelId { get; set; }   
+        public string[]  Models { get; set; }   
+        public string VehicleModel { get; set; }   
 
         public string CarLicensePlate { get; set; } 
 

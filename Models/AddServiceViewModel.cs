@@ -10,9 +10,29 @@ namespace CarServiceFronted.Models
         {
             get ;set;
         }
-        public string Description { get; set; }
+        [Required]
         public DateTime Date{get;set;}
+        [Required]
+
         public decimal Price { get; set; }
-        public string Status{ get; set; }
+
+        [Required]
+        public Guid StatusId{ get; set; }
+        public ServiceStatus[] StatusList{ get; set; }
+
+        public ServiceType[] ServicesType{ get; set; }
+
+        [Required]
+        public Guid ServiceTypeId{ get; set; }
+        [Required]
+        public Guid VehicleId { get;  set; }
+
+
+        public AddServiceViewModel GetAddServiceViewModel(Guid id)
+        {
+            this.VehicleId = id;  
+            
+            return this;
+        }
     }
 }

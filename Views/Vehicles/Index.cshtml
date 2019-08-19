@@ -25,8 +25,15 @@
             <td>@item.ManufacturingDate</td>
             <td>@item.CarLicensePlate</td>
             <td>@item.GetNextCarServices()</td>
-       
-            <td> @await Html.PartialAsync("AddServicePartial", new AddServiceViewModel())</td>
+              @{}
+            <td> @await Html.PartialAsync("AddServicePartial", new AddServiceViewModel()
+                {
+                    StatusList = Model.StatusList,
+                    ServicesType = Model.ServicesType,
+                    VehicleId =@item.ID                
+                })
+                
+                </td>
        
             
         </tr>

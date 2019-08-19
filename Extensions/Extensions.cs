@@ -8,8 +8,8 @@ namespace CarServiceFronted.Extensions {
        public static string GetNextCarServices (this Vehicle car) {
 
             if (car.Services != null && car.Services.Any() &&
-                car.Services.Any (s => s.Status == "Pending")) {
-                return car.Services.Where (s => s.Status == "Pending").First ().Date.ToString ();
+                car.Services.Any (s => s.Status.Trim() == "Pending")) {
+                return car.Services.Where (s => s.Status.Trim() == "Pending").OrderBy(s=> s.Date).First().Date.ToString ();
             }
             return "Sin services pendientes";
         }

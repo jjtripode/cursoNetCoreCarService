@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using CarServiceFronted.Models;
 using CursoNetCoreCarService.Services;
+using System;
+using System.Collections.Generic;
 
 namespace CarServiceFronted.Controllers
 {
@@ -26,13 +28,14 @@ namespace CarServiceFronted.Controllers
             var vehicleViewModel = new VehicleViewModel()
             {
                 Items = await _vehicleServices.GetAllVehiclesAsync(),
-                AddVehicleViewModel = addVehicleViewModel
+                AddVehicleViewModel = addVehicleViewModel,
+                ServicesType = await _vehicleServices.GetAllServicesTypeAsync(),
+                StatusList = await _vehicleServices.GetAllServicesStatusAsync()
             };
 
-
             return View(vehicleViewModel);
-
         }
+
 
         [HttpGet]
         [ValidateAntiForgeryToken]
@@ -68,7 +71,47 @@ namespace CarServiceFronted.Controllers
             {
                 return BadRequest("Could not add item.");
             }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddService(AddServiceViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var vehicle = await _vehicleServices.GetVehicleByIdAsync(model.VehicleId);
+            var ServiceType = await _vehicleServices.GetServiceTypeByIdAsync(model.ServiceTypeId);
+            var ServicesStatus = await _vehicleServices.GetServicesStatusByIdAsync(model.StatusId);
+
+            var service = new Service()
+            {
+                Price = model.Price,
+                Date = model.Date,
+                Status = ServicesStatus.Descripcion,
+                ServiceType = ServiceType
+            };
+
+           var successful = await _vehicleServices.SaveOrUpdateAsync(service);
+
+            if (vehicle.Services == null)
+            {
+                vehicle.Services = new List<Service>();
+            }
             
+            vehicle.Services.Add(service);
+
+            successful = await _vehicleServices.SaveOrUpdateAsync(vehicle);
+            
+            if (!successful)
+            {
+                return BadRequest("Could not add item.");
+            }
+
             return RedirectToAction("Index");
         }
     }

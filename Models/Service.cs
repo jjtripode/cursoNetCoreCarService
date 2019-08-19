@@ -14,5 +14,8 @@ namespace CarServiceFronted.Models
         public DateTime Date{get;set;}
         public decimal Price { get; set; }
         public string Status{ get; set; }
+        public ServiceType ServiceType{ get; set; }
+
+
     }
 }

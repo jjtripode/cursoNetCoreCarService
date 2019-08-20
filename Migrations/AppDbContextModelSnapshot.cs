@@ -32,235 +32,235 @@ namespace CarServiceFronted.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("22a54968-4b94-4c1d-b619-a200089ed420"),
+                            ID = new Guid("bbd874f1-1ad2-4767-acb1-8b9fe1c25147"),
                             Descripcion = "Seat",
                             models = "Alhambra,Altea,Altea XL,Arosa,Cordoba,Cordoba Vario,Exeo,Ibiza,Ibiza ST,Exeo ST,Leon,Leon ST,Inca,Mii,Toledo"
                         },
                         new
                         {
-                            ID = new Guid("3cba2ef5-4a37-477b-80ea-cc86b86ce9f8"),
+                            ID = new Guid("57ecc903-2c89-45db-a6a5-d01189b8202a"),
                             Descripcion = "Renault",
                             models = "Captur,Clio,Clio Grandtour,Espace,Express,Fluence,Grand Espace,Grand Modus,Grand Scenic,Kadjar,Kangoo,Kangoo Express,Koleos,Laguna,Laguna Grandtour,Latitude,Mascott,Mégane,Mégane CC,Mégane Combi,Mégane Grandtour,Mégane Coupé,Mégane Scénic,Scénic,Talisman,Talisman Grandtour,Thalia,Twingo,Wind,Zoé"
                         },
                         new
                         {
-                            ID = new Guid("3b7fec11-43cc-44c5-b117-616c04d0f294"),
+                            ID = new Guid("971ed050-8c00-4b89-a540-a8eb68b69630"),
                             Descripcion = "Peugeot",
                             models = "1007,107,106,108,2008,205,205 Cabrio,206,206 CC,206 SW,207,207 CC,207 SW,306,307,307 CC,307 SW,308,308 CC,308 SW,309,4007,4008,405,406,407,407 SW,5008,508,508 SW,605,806,607,807,Bipper,RCZ"
                         },
                         new
                         {
-                            ID = new Guid("54d94ceb-6044-4cb3-925f-353f96471094"),
+                            ID = new Guid("34fa0644-9187-4f41-be76-7031cc4a22a1"),
                             Descripcion = "Dacia",
                             models = "Dokker,Duster,Lodgy,Logan,Logan MCV,Logan Van,Sandero,Solenza"
                         },
                         new
                         {
-                            ID = new Guid("fc619198-d7e2-4ce4-8f85-0320a0e0810e"),
+                            ID = new Guid("ac9eb38f-d0d5-47ba-939b-7967d0eb72f7"),
                             Descripcion = "Citroën",
                             models = "Berlingo,C-Crosser,C-Elissée,C-Zero,C1,C2,C3,C3 Picasso,C4,C4 Aircross,C4 Cactus,C4 Coupé,C4 Grand Picasso,C4 Sedan,C5,C5 Break,C5 Tourer,C6,C8,DS3,DS4,DS5,Evasion,Jumper,Jumpy,Saxo,Nemo,Xantia,Xsara"
                         },
                         new
                         {
-                            ID = new Guid("5604e5ed-1506-49b1-b874-b27046067784"),
+                            ID = new Guid("bd160424-4182-40c4-8c52-1336de3331b3"),
                             Descripcion = "Opel",
                             models = "Agila,Ampera,Antara,Astra,Astra cabrio,Astra caravan,Astra coupé,Calibra,Campo,Cascada,Corsa,Frontera,Insignia,Insignia kombi,Kadett,Meriva,Mokka,Movano,Omega,Signum,Vectra,Vectra Caravan,Vivaro,Vivaro Kombi,Zafira"
                         },
                         new
                         {
-                            ID = new Guid("49bd496b-ab62-4f32-b74e-43f2af20732c"),
+                            ID = new Guid("b467c82f-8da0-4450-a72c-e387ccc28695"),
                             Descripcion = "Alfa Romeo",
                             models = "145,146,147,155,156,156 Sportwagon,159,159 Sportwagon,164,166,4C,Brera,GTV,MiTo,Crosswagon,Spider,GT,Giulietta,Giulia"
                         },
                         new
                         {
-                            ID = new Guid("daa97edf-9a39-4292-942b-bc50b3619a02"),
+                            ID = new Guid("c274451f-25b4-4b9d-841b-fe65e508c96f"),
                             Descripcion = "Škoda",
                             models = "Favorit,Felicia,Citigo,Fabia,Fabia Combi,Fabia Sedan,Felicia Combi,Octavia,Octavia Combi,Roomster,Yeti,Rapid,Rapid Spaceback,Superb,Superb Combi"
                         },
                         new
                         {
-                            ID = new Guid("1a926081-70b2-4659-aeca-8e482ae30c15"),
+                            ID = new Guid("bb037713-3b13-4110-b61f-a994b83c9f05"),
                             Descripcion = "Chevrolet",
                             models = "Alero,Aveo,Camaro,Captiva,Corvette,Cruze,Cruze SW,Epica,Equinox,Evanda,HHR,Kalos,Lacetti,Lacetti SW,Lumina,Malibu,Matiz,Monte Carlo,Nubira,Orlando,Spark,Suburban,Tacuma,Tahoe,Trax"
                         },
                         new
                         {
-                            ID = new Guid("2b1fe2b3-7c29-4fc0-9dcb-8fd7f8f9b9ae"),
+                            ID = new Guid("5407aa47-fb2d-4c2d-9a66-8735b853d49d"),
                             Descripcion = "Porsche",
                             models = "911 Carrera,911 Carrera Cabrio,911 Targa,911 Turbo,924,944,997,Boxster,Cayenne,Cayman,Macan,Panamera"
                         },
                         new
                         {
-                            ID = new Guid("554d98dc-9097-48d5-bb50-341d0ef9a774"),
+                            ID = new Guid("36a450df-8839-4a2b-9a64-9e8687148888"),
                             Descripcion = "Honda",
                             models = "Accord,Accord Coupé,Accord Tourer,City,Civic,Civic Aerodeck,Civic Coupé,Civic Tourer,Civic Type R,CR-V,CR-X,CR-Z,FR-V,HR-V,Insight,Integra,Jazz,Legend,Prelude"
                         },
                         new
                         {
-                            ID = new Guid("4cc2bedb-5645-414d-ad7a-dbb3b22703ff"),
+                            ID = new Guid("a894377d-bc0d-404d-a8e6-ae9ee753cbb0"),
                             Descripcion = "Subaru",
                             models = "BRZ,Forester,Impreza,Impreza Wagon,Justy,Legacy,Legacy Wagon,Legacy Outback,Levorg,Outback,SVX,Tribeca,Tribeca B9,XV"
                         },
                         new
                         {
-                            ID = new Guid("96bab860-18b0-4a5f-94aa-b91fe5ef2304"),
+                            ID = new Guid("59c755cf-14a0-4ae0-97c4-c0749e9edac2"),
                             Descripcion = "Mazda",
                             models = "121,2,3,323,323 Combi,323 Coupé,323 F,5,6,6 Combi,626,626 Combi,B-Fighter,B2500,BT,CX-3,CX-5,CX-7,CX-9,Demio,MPV,MX-3,MX-5,MX-6,Premacy,RX-7,RX-8,Xedox 6"
                         },
                         new
                         {
-                            ID = new Guid("f462704b-fbcb-4e87-90a2-d0a1165d0018"),
+                            ID = new Guid("1316e9e7-e595-4cd0-ab44-f0f0b040ec48"),
                             Descripcion = "Mitsubishi",
                             models = "3000 GT,ASX,Carisma,Colt,Colt CC,Eclipse,Fuso canter,Galant,Galant Combi,Grandis,L200,L200 Pick up,L200 Pick up Allrad,L300,Lancer,Lancer Combi,Lancer Evo,Lancer Sportback,Outlander,Pajero,Pajeto Pinin,Pajero Pinin Wagon,Pajero Sport,Pajero Wagon,Space Star"
                         },
                         new
                         {
-                            ID = new Guid("c74ef8f3-afc6-4b34-9dc8-5df6f0880f6c"),
+                            ID = new Guid("b5e217c9-a21b-4f8d-b9ae-ded22721eddd"),
                             Descripcion = "Lexus",
                             models = "CT,GS,GS 300,GX,IS,IS 200,IS 250 C,IS-F,LS,LX,NX,RC F,RX,RX 300,RX 400h,RX 450h,SC 430"
                         },
                         new
                         {
-                            ID = new Guid("0bca854e-9413-4287-85ed-5b0622846df2"),
+                            ID = new Guid("48b5b6b8-f173-4e00-b810-422900504ac1"),
                             Descripcion = "Toyota",
                             models = "4-Runner,Auris,Avensis,Avensis Combi,Avensis Van Verso,Aygo,Camry,Carina,Celica,Corolla,Corolla Combi,Corolla sedan,Corolla Verso,FJ Cruiser,GT86,Hiace,Hiace Van,Highlander,Hilux,Land Cruiser,MR2,Paseo,Picnic,Prius,RAV4,Sequoia,Starlet,Supra,Tundra,Urban Cruiser,Verso,Yaris,Yaris Verso"
                         },
                         new
                         {
-                            ID = new Guid("d6146e69-c709-447a-b153-e864406ca219"),
+                            ID = new Guid("abb22401-d36d-4d5b-a06b-d641bbc85566"),
                             Descripcion = "BMW",
                             models = "i3,i8,M3,M4,M5,M6,Rad 1,Rad 1 Cabrio,Rad 1 Coupé,Rad 2,Rad 2 Active Tourer,Rad 2 Coupé,Rad 2 Gran Tourer,Rad 3,Rad 3 Cabrio,Rad 3 Compact,Rad 3 Coupé,Rad 3 GT,Rad 3 Touring,Rad 4,Rad 4 Cabrio,Rad 4 Gran Coupé,Rad 5,Rad 5 GT,Rad 5 Touring,Rad 6,Rad 6 Cabrio,Rad 6 Coupé,Rad 6 Gran Coupé,Rad 7,Rad 8 Coupé,X1,X3,X4,X5,X6,Z3,Z3 Coupé,Z3 Roadster,Z4,Z4 Roadster"
                         },
                         new
                         {
-                            ID = new Guid("4a80cc92-0600-485f-a2dc-5d51eec82eed"),
+                            ID = new Guid("2156aba9-3919-43b3-a45b-7b540b9daf48"),
                             Descripcion = "Volkswagen",
                             models = "Amarok,Beetle,Bora,Bora Variant,Caddy,Caddy Van,Life,California,Caravelle,CC,Crafter,Crafter Van,Crafter Kombi,CrossTouran,Eos,Fox,Golf,Golf Cabrio,Golf Plus,Golf Sportvan,Golf Variant,Jetta,LT,Lupo,Multivan,New Beetle,New Beetle Cabrio,Passat,Passat Alltrack,Passat CC,Passat Variant,Passat Variant Van,Phaeton,Polo,Polo Van,Polo Variant,Scirocco,Sharan,T4,T4 Caravelle,T4 Multivan,T5,T5 Caravelle,T5 Multivan,T5 Transporter Shuttle,Tiguan,Touareg,Touran"
                         },
                         new
                         {
-                            ID = new Guid("6db14124-9dc6-4dcb-8d6d-04bba20a644e"),
+                            ID = new Guid("8d0e62f2-d0b7-40a4-af33-628a0c7ffabe"),
                             Descripcion = "Suzuki",
                             models = "Alto,Baleno,Baleno kombi,Grand Vitara,Grand Vitara XL-7,Ignis,Jimny,Kizashi,Liana,Samurai,Splash,Swift,SX4,SX4 Sedan,Vitara,Wagon R+"
                         },
                         new
                         {
-                            ID = new Guid("2ed70af6-c5df-4db2-af94-2d54dc088fda"),
+                            ID = new Guid("5895d302-6461-48c3-90cf-1140e4e6188b"),
                             Descripcion = "Mercedes-Benz",
                             models = "100 D,115,124,126,190,190 D,190 E,200 - 300,200 D,200 E,210 Van,210 kombi,310 Van,310 kombi,230 - 300 CE Coupé,260 - 560 SE,260 - 560 SEL,500 - 600 SEC Coupé,Trieda A,A,A L,AMG GT,Trieda B,Trieda C,C,C Sportcoupé,C T,Citan,CL,CL,CLA,CLC,CLK Cabrio,CLK Coupé,CLS,Trieda E,E,E Cabrio,E Coupé,E T,Trieda G,G Cabrio,GL,GLA,GLC,GLE,GLK,Trieda M,MB 100,Trieda R,Trieda S,S,S Coupé,SL,SLC,SLK,SLR,Sprinter"
                         },
                         new
                         {
-                            ID = new Guid("ba24f26b-027b-44fd-bd5c-20887f796a7a"),
+                            ID = new Guid("d8e5de9f-ceb7-4150-8900-fb7f4b97529f"),
                             Descripcion = "Saab",
                             models = "9-3,9-3 Cabriolet,9-3 Coupé,9-3 SportCombi,9-5,9-5 SportCombi,900,900 C,900 C Turbo,9000"
                         },
                         new
                         {
-                            ID = new Guid("ce2a41cb-ab93-47f7-8464-5a337eeca317"),
+                            ID = new Guid("8c561d9d-3c21-499a-8bdf-291d0da687bd"),
                             Descripcion = "Audi",
                             models = "100,100 Avant,80,80 Avant,80 Cabrio,90,A1,A2,A3,A3 Cabriolet,A3 Limuzina,A3 Sportback,A4,A4 Allroad,A4 Avant,A4 Cabriolet,A5,A5 Cabriolet,A5 Sportback,A6,A6 Allroad,A6 Avant,A7,A8,A8 Long,Q3,Q5,Q7,R8,RS4 Cabriolet,RS4/RS4 Avant,RS5,RS6 Avant,RS7,S3/S3 Sportback,S4 Cabriolet,S4/S4 Avant,S5/S5 Cabriolet,S6/RS6,S7,S8,SQ5,TT Coupé,TT Roadster,TTS"
                         },
                         new
                         {
-                            ID = new Guid("bca90dd4-eb78-4d7d-9cf2-bb2e6bbf2fe5"),
+                            ID = new Guid("b9045e42-6ea7-4e2a-8477-c67bad8ae9cb"),
                             Descripcion = "Kia",
                             models = "Avella,Besta,Carens,Carnival,Cee`d,Cee`d SW,Cerato,K 2500,Magentis,Opirus,Optima,Picanto,Pregio,Pride,Pro Cee`d,Rio,Rio Combi,Rio sedan,Sephia,Shuma,Sorento,Soul,Sportage,Venga"
                         },
                         new
                         {
-                            ID = new Guid("43d12622-64f3-4e4b-85a2-ca59254cc044"),
+                            ID = new Guid("fb6069e6-539f-4ea4-a4b4-c8eb37f0a64d"),
                             Descripcion = "Land Rover",
                             models = "109,Defender,Discovery,Discovery Sport,Freelander,Range Rover,Range Rover Evoque,Range Rover Sport"
                         },
                         new
                         {
-                            ID = new Guid("7ce4e5ac-ec03-4c7e-bf73-8f0a0e54dac8"),
+                            ID = new Guid("84eb0d04-1393-4985-b163-de5a4348aaef"),
                             Descripcion = "Dodge",
                             models = "Avenger,Caliber,Challenger,Charger,Grand Caravan,Journey,Magnum,Nitro,RAM,Stealth,Viper"
                         },
                         new
                         {
-                            ID = new Guid("bf60bf26-0084-48ed-a9ac-17dbe36d6896"),
+                            ID = new Guid("7001cd67-7459-41e3-9459-7c8a120efee2"),
                             Descripcion = "Chrysler",
                             models = "300 C,300 C Touring,300 M,Crossfire,Grand Voyager,LHS,Neon,Pacifica,Plymouth,PT Cruiser,Sebring,Sebring Convertible,Stratus,Stratus Cabrio,Town & Country,Voyager"
                         },
                         new
                         {
-                            ID = new Guid("14d34d6d-09da-4597-a1c7-80bd95db99d0"),
+                            ID = new Guid("f1b47f57-43ae-497a-97ff-ec87f0e87fd5"),
                             Descripcion = "Ford",
                             models = "Aerostar,B-Max,C-Max,Cortina,Cougar,Edge,Escort,Escort Cabrio,Escort kombi,Explorer,F-150,F-250,Fiesta,Focus,Focus C-Max,Focus CC,Focus kombi,Fusion,Galaxy,Grand C-Max,Ka,Kuga,Maverick,Mondeo,Mondeo Combi,Mustang,Orion,Puma,Ranger,S-Max,Sierra,Street Ka,Tourneo Connect,Tourneo Custom,Transit,Transit,Transit Bus,Transit Connect LWB,Transit Courier,Transit Custom,Transit kombi,Transit Tourneo,Transit Valnik,Transit Van,Transit Van 350,Windstar"
                         },
                         new
                         {
-                            ID = new Guid("c8bfbee0-c20b-4c4e-a803-63773b8bad86"),
+                            ID = new Guid("411cccd9-1f12-4305-ba23-dc71ef203ad1"),
                             Descripcion = "Hummer",
                             models = "H2,H3"
                         },
                         new
                         {
-                            ID = new Guid("9231ae74-247f-4ae8-88ab-cf54e2e74644"),
+                            ID = new Guid("cb6cfd06-8bd9-4b58-a728-db215a20306e"),
                             Descripcion = "Hyundai",
                             models = "Accent,Atos,Atos Prime,Coupé,Elantra,Galloper,Genesis,Getz,Grandeur,H 350,H1,H1 Bus,H1 Van,H200,i10,i20,i30,i30 CW,i40,i40 CW,ix20,ix35,ix55,Lantra,Matrix,Santa Fe,Sonata,Terracan,Trajet,Tucson,Veloster"
                         },
                         new
                         {
-                            ID = new Guid("d9811187-3784-4966-ba32-c8f008a3a98e"),
+                            ID = new Guid("97dbf14c-5465-4bf9-b4dd-41c981d53448"),
                             Descripcion = "Infiniti",
                             models = "EX,FX,G,G Coupé,M,Q,QX"
                         },
                         new
                         {
-                            ID = new Guid("60e91220-0fcb-4785-9df5-90b2764a44c5"),
+                            ID = new Guid("fd6aa981-7c18-4d1d-bd56-f8c6309f0aa0"),
                             Descripcion = "Jaguar",
                             models = "Daimler,F-Pace,F-Type,S-Type,Sovereign,X-Type,X-type Estate,XE,XF,XJ,XJ12,XJ6,XJ8,XJ8,XJR,XK,XK8 Convertible,XKR,XKR Convertible"
                         },
                         new
                         {
-                            ID = new Guid("0b3b8689-3860-466a-931f-5fc5f8cfe1ff"),
+                            ID = new Guid("3bd2843e-8fe4-451e-8eb3-56a705356488"),
                             Descripcion = "Jeep",
                             models = "Cherokee,Commander,Compass,Grand Cherokee,Patriot,Renegade,Wrangler"
                         },
                         new
                         {
-                            ID = new Guid("ec66b281-0335-466c-9af0-e79bdd00bfbf"),
+                            ID = new Guid("696f3aaa-9d50-47b1-8b13-2a00842538b9"),
                             Descripcion = "Nissan",
                             models = "100 NX,200 SX,350 Z,350 Z Roadster,370 Z,Almera,Almera Tino,Cabstar E - T,Cabstar TL2 Valnik,e-NV200,GT-R,Insterstar,Juke,King Cab,Leaf,Maxima,Maxima QX,Micra,Murano,Navara,Note,NP300 Pickup,NV200,NV400,Pathfinder,Patrol,Patrol GR,Pickup,Pixo,Primastar,Primastar Combi,Primera,Primera Combi,Pulsar,Qashqai,Serena,Sunny,Terrano,Tiida,Trade,Vanette Cargo,X-Trail"
                         },
                         new
                         {
-                            ID = new Guid("66a9ec18-d234-4efa-9f11-33047264331b"),
+                            ID = new Guid("ef42ac68-f67c-43c8-b2d5-c68c119285ae"),
                             Descripcion = "Volvo",
                             models = "240,340,360,460,850,850 kombi,C30,C70,C70 Cabrio,C70 Coupé,S40,S60,S70,S80,S90,V40,V50,V60,V70,V90,XC60,XC70,XC90"
                         },
                         new
                         {
-                            ID = new Guid("c38fd76e-75b5-4bcb-9e60-fca682ffc755"),
+                            ID = new Guid("4bf37a8c-6472-4557-a9fc-9d3b43e56b1c"),
                             Descripcion = "Daewoo",
                             models = "Espero,Kalos,Lacetti,Lanos,Leganza,Lublin,Matiz,Nexia,Nubira,Nubira kombi,Racer,Tacuma,Tico"
                         },
                         new
                         {
-                            ID = new Guid("5e3aac3c-4871-4e7a-b45f-b33bbb763b1e"),
+                            ID = new Guid("6d9ca491-b2b0-4464-baf4-26fe09ee5a74"),
                             Descripcion = "Fiat",
                             models = "1100,126,500,500L,500X,850,Barchetta,Brava,Cinquecento,Coupé,Croma,Doblo,Doblo Cargo,Doblo Cargo Combi,Ducato,Ducato Van,Ducato Kombi,Ducato Podvozok,Florino,Florino Combi,Freemont,Grande Punto,Idea,Linea,Marea,Marea Weekend,Multipla,Palio Weekend,Panda,Panda Van,Punto,Punto Cabriolet,Punto Evo,Punto Van,Qubo,Scudo,Scudo Van,Scudo Kombi,Sedici,Seicento,Stilo,Stilo Multiwagon,Strada,Talento,Tipo,Ulysse,Uno,X1/9"
                         },
                         new
                         {
-                            ID = new Guid("c9fec9e8-adbc-4374-aa2a-d5f8950047d8"),
+                            ID = new Guid("c4e12c98-0b52-4097-9cad-92785d183bcd"),
                             Descripcion = "MINI",
                             models = "Cooper,Cooper Cabrio,Cooper Clubman,Cooper D,Cooper D Clubman,Cooper S,Cooper S Cabrio,Cooper S Clubman,Countryman,Mini One,One D"
                         },
                         new
                         {
-                            ID = new Guid("2dd0ea9c-3960-4462-9218-3777e9a5972e"),
+                            ID = new Guid("a7cfbdc6-ded0-4558-83e4-985501705af8"),
                             Descripcion = "Rover",
                             models = "200,214,218,25,400,414,416,620,75"
                         },
                         new
                         {
-                            ID = new Guid("699841c9-3e88-441f-bcc8-f90a7e943a81"),
+                            ID = new Guid("56bc5d6d-31e3-4a94-b36f-9b4cfda4e95f"),
                             Descripcion = "Smart",
                             models = "Cabrio,City-Coupé,Compact Pulse,Forfour,Fortwo cabrio,Fortwo coupé,Roadster"
                         });
@@ -308,25 +308,25 @@ namespace CarServiceFronted.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("5eed8291-e6dd-4e6d-aed1-3ae05dc24f09"),
+                            ID = new Guid("90a95993-c438-44dc-a5d5-88abc8672c55"),
                             Descripcion = "Pending   ",
                             IdStatus = 10
                         },
                         new
                         {
-                            ID = new Guid("68c6bea0-41e6-43c1-aa59-2e61369deb5a"),
+                            ID = new Guid("faf3fd2e-ee88-4151-85bd-f842a9e03707"),
                             Descripcion = "InProgress",
                             IdStatus = 20
                         },
                         new
                         {
-                            ID = new Guid("f02239ca-5fd4-49b4-bb74-d5d17fbb9652"),
+                            ID = new Guid("2c6dbfd0-77f2-444d-8473-8983c22cc9e1"),
                             Descripcion = "Delayed   ",
                             IdStatus = 30
                         },
                         new
                         {
-                            ID = new Guid("76e0605c-da0d-4ada-9665-9d62c5bddaea"),
+                            ID = new Guid("6eec640e-7043-4b50-a5d1-d97e4657c7e7"),
                             Descripcion = "Ended     ",
                             IdStatus = 40
                         });
@@ -346,42 +346,42 @@ namespace CarServiceFronted.Migrations
                     b.HasData(
                         new
                         {
-                            ID = new Guid("38551fb8-e4c0-4701-8da2-0bc2ff157a11"),
+                            ID = new Guid("39a27387-2024-4e42-9df0-2d26e88c9d62"),
                             Descripcion = "Mantenimiento 1000Km"
                         },
                         new
                         {
-                            ID = new Guid("1beb2531-208f-4c7b-b729-76615afd7ef9"),
+                            ID = new Guid("836eca5b-ba0e-45b7-8f41-b4c92031b999"),
                             Descripcion = "Mantenimiento 2000Km"
                         },
                         new
                         {
-                            ID = new Guid("5b76c998-6ba4-4523-94a2-0803d9a37e78"),
+                            ID = new Guid("0fcb92b5-082e-4769-af08-03ce8b2834fc"),
                             Descripcion = "Mantenimiento 5000Km"
                         },
                         new
                         {
-                            ID = new Guid("2f4b8fed-e1f3-4f76-96dc-e36738497a38"),
+                            ID = new Guid("9ea05586-d2a3-4736-8845-84dce0c93179"),
                             Descripcion = "Mantenimiento 10000Km"
                         },
                         new
                         {
-                            ID = new Guid("557c5e32-6cad-4c7f-a21a-848e63f35d4d"),
+                            ID = new Guid("756620e6-1bf5-4f6e-b2a6-a84d5aa3f587"),
                             Descripcion = "Cambio de Aceite "
                         },
                         new
                         {
-                            ID = new Guid("15bf59b6-fea0-4d95-b7bd-468ea4585507"),
+                            ID = new Guid("54eb1a1a-7d2b-4662-a7b2-f26ff27b1aec"),
                             Descripcion = "Cambio de Cubiertas "
                         },
                         new
                         {
-                            ID = new Guid("dfcb4919-14aa-4a6c-91b9-a02778000329"),
+                            ID = new Guid("ef752d5f-8009-4052-a01f-f99b245692cf"),
                             Descripcion = "Cambio de Cambio Filtros "
                         },
                         new
                         {
-                            ID = new Guid("a35a0e17-8527-4e3a-9c77-7a0ab51a3c74"),
+                            ID = new Guid("8a8996ee-e16a-4168-a929-644b68d92238"),
                             Descripcion = "Cambio de Cambio Correa Distribucion "
                         });
                 });

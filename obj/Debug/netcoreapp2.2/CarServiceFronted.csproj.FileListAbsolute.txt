@@ -31,3 +31,4 @@ D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\CarServiceFronted.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\AddServicePartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\AddVehiclePartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\Index.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\DetailsServicePartial.g.cshtml.cs

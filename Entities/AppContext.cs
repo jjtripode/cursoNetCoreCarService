@@ -16,12 +16,21 @@ namespace CursoNetCoreCarService.Entities
         public DbSet<Brand> Brands { get; set; }
         public DbSet<ServiceStatus> ServiceStatus { get; set; }
         public DbSet<ServiceType> ServicesType { get; set; }
+        public DbSet<Price> Prices { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "Pending   ", IdStatus = 10 });
-            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "InProgress", IdStatus = 20 });
-            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "Delayed   ", IdStatus = 30 });
-            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "Ended     ", IdStatus = 40 });
+
+            builder.Entity<Price>().HasData(new Price { ID = Guid.NewGuid(), Value = 1000 });
+            builder.Entity<Price>().HasData(new Price { ID = Guid.NewGuid(), Value = 5000 });
+            builder.Entity<Price>().HasData(new Price { ID = Guid.NewGuid(), Value = 10000 });
+            builder.Entity<Price>().HasData(new Price { ID = Guid.NewGuid(), Value = 15000 });
+            builder.Entity<Price>().HasData(new Price { ID = Guid.NewGuid(), Value = 20000 });
+            builder.Entity<Price>().HasData(new Price { ID = Guid.NewGuid(), Value = 50000 });
+
+            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "Pendiente", IdStatus = 10 });
+            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "En Progreso", IdStatus = 20 });
+            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "Postergado", IdStatus = 30 });
+            builder.Entity<ServiceStatus>().HasData(new ServiceStatus { ID = Guid.NewGuid(), Descripcion = "Finalizado", IdStatus = 40 });
 
             builder.Entity<Brand>().HasData( new Brand {ID  = Guid.NewGuid(),Descripcion= "Seat",models="Alhambra,Altea,Altea XL,Arosa,Cordoba,Cordoba Vario,Exeo,Ibiza,Ibiza ST,Exeo ST,Leon,Leon ST,Inca,Mii,Toledo"});
 builder.Entity<Brand>().HasData( new Brand {ID  = Guid.NewGuid(),Descripcion= "Renault",models="Captur,Clio,Clio Grandtour,Espace,Express,Fluence,Grand Espace,Grand Modus,Grand Scenic,Kadjar,Kangoo,Kangoo Express,Koleos,Laguna,Laguna Grandtour,Latitude,Mascott,Mégane,Mégane CC,Mégane Combi,Mégane Grandtour,Mégane Coupé,Mégane Scénic,Scénic,Talisman,Talisman Grandtour,Thalia,Twingo,Wind,Zoé"});

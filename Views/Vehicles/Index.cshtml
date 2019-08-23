@@ -1,9 +1,12 @@
 ﻿@model VehicleViewModel; 
 @using CarServiceFronted.Extensions;
+@using Humanizer;
+
  @{ ViewData["Title"] = "Services History"; }
 <div class="panel panel-default todo-panel">
     <div class="panel-heading">@ViewData["Title"]</div>
-    <table class="table table-hover">
+   
+    <table id="vehiclesTable" class="table table-hover">
         <thead>
             <tr>
                 <td>&#x2714;</td>
@@ -11,8 +14,9 @@
                 <td>Model</td>
                 <td>Año</td>
                 <td>Patente</td>
-                <td>Service</td>
-                <td></td>
+                <td>Proximo Service</td>
+                <td>Crear Service</td> 
+                <td>Detalle Services</td>
             </tr>
         </thead>
         @foreach (var item in Model.Items) {
@@ -25,33 +29,107 @@
             <td>@item.ManufacturingDate</td>
             <td>@item.CarLicensePlate</td>
             <td>@item.GetNextCarServices()</td>
-              @{}
-            <td> @await Html.PartialAsync("AddServicePartial", new AddServiceViewModel()
-                {
-                    StatusList = Model.StatusList,
-                    ServicesType = Model.ServicesType,
-                    VehicleId =@item.ID                
-                })
-                
-                </td>
-       
+            <td  class="CrearService" vehicleId="@item.ID" > 
+                <span class="table-remove">
+                <button type="button"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Agregar Service
+                  </button>
+                  </span> 
+            </td> 
+            <td  class="DetalleService" vehicleId="@item.ID"> 
+                                <span class="table-remove">
+                <button type="button"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Detalle Servicios
+                  </button>
+                  </span> 
+                 </td> 
             
         </tr>
         }
     </table>
+
+    
+<div class="modal fade" id="myModal">
+
+</div>
+<div class="modal fade" id="DetailsServieDialog">
+
+</div>
+
     <div class="panel-footer add-item-form">
+        
         @await Html.PartialAsync("AddVehiclePartial", Model.AddVehicleViewModel)
+
     </div>
 </div>
 
 
+
 @section Scripts{
-
 	<script type="text/javascript">
-		$('#datepicker').datepicker({
-			format: 'dd/mm/yyyy',
-			uiLibrary: 'bootstrap4'
-		});
 
+ $(function () {
+ $("#dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                title: "Agregar Servicio"
+            });
+
+
+           $("#vehiclesTable .CrearService").click(function () {
+             
+                var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
+
+              
+
+                $.ajax({
+                    type: "Get",
+                    url: "/Vehicles/CreateService",
+                    data: 'vehicleId=' + vehicleId,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                         $('#myModal').html('');
+                        $('#myModal').html(response);
+                       $("#myModal").modal();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+           });
+
+           $("#vehiclesTable .DetalleService").click(function () {
+              var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
+              
+                $.ajax({
+                    type: "Get",
+                    url: "/Vehicles/DetailsService",
+                    data: 'vehicleId=' + vehicleId,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        $('#DetailsServieDialog').html('');
+                        $('#DetailsServieDialog').html(response);
+                        $('#DetailsServieDialog').modal();
+                    },
+                    failure: function (response) {
+                        alert('failure: ' + response.responseText);
+                    },
+                    error: function (response) {
+                        alert('error: ' + response.responseText);
+                    }
+                });
+           });
+
+           return false;
+     });
+
+
+
+	
 	</script>
-	}	
+}

@@ -43,12 +43,20 @@ namespace CursoNetCoreCarService.Services
 
         public async Task<Vehicle[]> GetAllVehiclesAsync()
         {
-            return await _context.Vehicles.Include(v=> v.Services).ToArrayAsync();
+            return await _context.Vehicles.Include(v=> v.Services)
+               .Include(v=> v.Services).ThenInclude(s => s.ServiceType)
+            .Include(v=>v.Services).ThenInclude( s=>s.Status)
+            .Include(v=>v.Services).ThenInclude( s=>s.Price)
+            .ToArrayAsync();
         }
 
         public async Task<Vehicle> GetVehicleByIdAsync(Guid vehicleId)
         {
-            return await _context.Vehicles.Where(v => v.ID == vehicleId).FirstOrDefaultAsync();
+            return await _context.Vehicles.Where(v => v.ID == vehicleId)
+            .Include(v=> v.Services).ThenInclude(s => s.ServiceType)
+            .Include(v=>v.Services).ThenInclude( s=>s.Status)
+            .Include(v=>v.Services).ThenInclude( s=>s.Price)
+            .FirstOrDefaultAsync();
         }
 
         public async Task<ServiceType[]> GetAllServicesTypeAsync()
@@ -85,6 +93,16 @@ namespace CursoNetCoreCarService.Services
             }
 
             return await _context.SaveChangesAsync() == 1;
+        }
+
+        public async Task<Price[]> GetAllPricesAsync()
+        {
+            return await _context.Prices.ToArrayAsync();
+        }
+
+        public async Task<Price> GetPriceById(Guid id)
+        {
+            return await _context.Prices.Where(p=> p.ID == id ).FirstOrDefaultAsync();
         }
     }
 }

@@ -12,4 +12,5 @@ namespace CarServiceFronted.Models
         public ServiceType[] ServicesType { get;  set; }
         public ServiceStatus[] StatusList { get;  set; }
     }
+      
 }

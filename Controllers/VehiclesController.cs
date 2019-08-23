@@ -30,7 +30,6 @@ namespace CarServiceFronted.Controllers
         }
         public async Task<IActionResult> Index()
         {
-
             var vehicleViewModel = new VehicleViewModel()
             {
                 Items = await _vehicleServices.GetAllVehiclesAsync(),

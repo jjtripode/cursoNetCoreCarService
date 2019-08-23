@@ -24,8 +24,8 @@
                         <select asp-for="VehicleModel" asp-items="@(new SelectList(Model.Brands[0].Models))" class="form-control"></select> 
                     </div>
                     <div class="form-group">
-                        <label for="CarLicensePlate" asp-for="CarLicensePlate" class="col-form-label">Patente</label>
-                        <input asp-for="CarLicensePlate">
+                        <label for="CarLicensePlate" asp-for="CarLicensePlate" class="col-form-label" >Patente</label>
+                        <input asp-for="CarLicensePlate" required>
                     </div>
 
                     <div class="form-group">

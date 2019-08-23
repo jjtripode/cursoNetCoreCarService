@@ -1,32 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Practicas\\CursoNetCoreCarService\\CarServiceFronted.csproj": {}
+    "C:\\Users\\cisco\\Documents\\repoVehiculos\\CarServiceFronted.csproj": {}
   },
   "projects": {
-    "D:\\Practicas\\CursoNetCoreCarService\\CarServiceFronted.csproj": {
+    "C:\\Users\\cisco\\Documents\\repoVehiculos\\CarServiceFronted.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Practicas\\CursoNetCoreCarService\\CarServiceFronted.csproj",
+        "projectUniqueName": "C:\\Users\\cisco\\Documents\\repoVehiculos\\CarServiceFronted.csproj",
         "projectName": "CarServiceFronted",
-        "projectPath": "D:\\Practicas\\CursoNetCoreCarService\\CarServiceFronted.csproj",
-        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
-        "outputPath": "D:\\Practicas\\CursoNetCoreCarService\\obj\\",
+        "projectPath": "C:\\Users\\cisco\\Documents\\repoVehiculos\\CarServiceFronted.csproj",
+        "packagesPath": "C:\\Users\\cisco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cisco\\Documents\\repoVehiculos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\cisco\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

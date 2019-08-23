@@ -32,3 +32,5 @@ D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\AddVehiclePartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\Index.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\DetailsServicePartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs

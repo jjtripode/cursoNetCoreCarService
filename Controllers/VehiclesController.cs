@@ -2,49 +2,70 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CarServiceFronted.Models;
+using CursoNetCoreCarService.Entities;
 using CursoNetCoreCarService.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CarServiceFronted.Controllers {
-    public class VehiclesController : Controller {
+namespace CarServiceFronted.Controllers
+{
+    public class VehiclesController : Controller
+    {
         private readonly IVehicleServices _vehicleServices;
 
         private readonly IBrandServices _brandServices;
 
-        public VehiclesController (IVehicleServices vehicleService, IBrandServices brandServices) {
+        private readonly UserManager<IdentityUser> _userManager;
+
+
+        public VehiclesController(
+            IVehicleServices vehicleService
+        , IBrandServices brandServices,
+        UserManager<IdentityUser> userManager)
+        {
             _vehicleServices = vehicleService;
             _brandServices = brandServices;
+            _userManager = userManager;
         }
-        public async Task<IActionResult> Index () {
+        public async Task<IActionResult> Index()
+        {
 
-            var vehicleViewModel = new VehicleViewModel () {
-                Items = await _vehicleServices.GetAllVehiclesAsync (),
+            var vehicleViewModel = new VehicleViewModel()
+            {
+                Items = await _vehicleServices.GetAllVehiclesAsync(),
 
-                StatusList = await _vehicleServices.GetAllServicesStatusAsync (),
-                ServicesType = await _vehicleServices.GetAllServicesTypeAsync (),
-                AddVehicleViewModel = await this.GetAddVehicleViewModel ()
+                StatusList = await _vehicleServices.GetAllServicesStatusAsync(),
+                ServicesType = await _vehicleServices.GetAllServicesTypeAsync(),
+                AddVehicleViewModel = await this.GetAddVehicleViewModel()
             };
 
-            return View (vehicleViewModel);
+            return View(vehicleViewModel);
         }
-
+        [Authorize(Roles = Roles.Vendedor)]
         [HttpGet]
-        public async Task<IActionResult> DetailsService(Guid vehicleId) {
+        public async Task<IActionResult> DetailsService(Guid vehicleId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null) return Challenge();
 
-            var vehicle =  await _vehicleServices.GetVehicleByIdAsync(vehicleId);
-            var detailServicesViewModel = new DetailServicesViewModel () {
-               Services = vehicle.Services 
+            var vehicle = await _vehicleServices.GetVehicleByIdAsync(vehicleId);
+            var detailServicesViewModel = new DetailServicesViewModel()
+            {
+                Services = vehicle.Services
             };
 
-            return PartialView ("DetailsServicePartial", detailServicesViewModel);
+            return PartialView("DetailsServicePartial", detailServicesViewModel);
 
-            
+
         }
 
-        private async Task<AddVehicleViewModel> GetAddVehicleViewModel () {
-            var addVehicleViewModel = new AddVehicleViewModel ();
+        [Authorize]
+        private async Task<AddVehicleViewModel> GetAddVehicleViewModel()
+        {
+            var addVehicleViewModel = new AddVehicleViewModel();
 
-            addVehicleViewModel.Brands = await _brandServices.GetAllBrandsAsync ();
+            addVehicleViewModel.Brands = await _brandServices.GetAllBrandsAsync();
             addVehicleViewModel.Models = addVehicleViewModel.Brands[0].Models;
             addVehicleViewModel.ManufacturingDate = DateTime.Today;
 
@@ -53,87 +74,102 @@ namespace CarServiceFronted.Controllers {
 
         [HttpGet]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> GetVehicle () {
-            return View (new AddVehicleViewModel () {
-                Brands = await _brandServices.GetAllBrandsAsync (),
-                    Models = new string[] { }
+        public async Task<IActionResult> GetVehicle()
+        {
+            return View(new AddVehicleViewModel()
+            {
+                Brands = await _brandServices.GetAllBrandsAsync(),
+                Models = new string[] { }
             });
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddVehicle (AddVehicleViewModel model) {
-           
-            if (!ModelState.IsValid) {
-                return RedirectToAction ("Index");
+        public async Task<IActionResult> AddVehicle(AddVehicleViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
             }
 
-            var vehicle = new Vehicle () {
+            var vehicle = new Vehicle()
+            {
                 Model = model.VehicleModel,
                 Brand = model.Brand,
                 ManufacturingDate = model.ManufacturingDate,
                 CarLicensePlate = model.CarLicensePlate
             };
 
-            var successful = await _vehicleServices.AddVehicleAsync (vehicle);
-            if (!successful) {
-                return BadRequest ("Could not add item.");
+            var successful = await _vehicleServices.AddVehicleAsync(vehicle);
+            if (!successful)
+            {
+                return BadRequest("Could not add item.");
             }
 
-            return RedirectToAction ("Index");
+            return RedirectToAction("Index");
         }
 
 
         [HttpGet]
-        // [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateService (Guid vehicleId) {
-           
-           var addServiceViewModel = new AddServiceViewModel(){   
-             StatusList = await _vehicleServices.GetAllServicesStatusAsync (),
-              ServicesType = await _vehicleServices.GetAllServicesTypeAsync (),
-              Prices = await _vehicleServices.GetAllPricesAsync(),
-              VehicleId = vehicleId
-           };
+        [Authorize]
+        public async Task<IActionResult> CreateService(Guid vehicleId)
+        {
 
-            return PartialView ("AddServicePartial", addServiceViewModel);
+            var addServiceViewModel = new AddServiceViewModel()
+            {
+                StatusList = await _vehicleServices.GetAllServicesStatusAsync(),
+                ServicesType = await _vehicleServices.GetAllServicesTypeAsync(),
+                Prices = await _vehicleServices.GetAllPricesAsync(),
+                VehicleId = vehicleId
+            };
+
+            return PartialView("AddServicePartial", addServiceViewModel);
         }
 
 
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddService(AddServiceViewModel model) {
-            if (!ModelState.IsValid) {
-                return RedirectToAction ("Index");
+        public async Task<IActionResult> AddService(AddServiceViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
             }
 
-            var vehicle = await _vehicleServices.GetVehicleByIdAsync (model.VehicleId);
-            var ServiceType = await _vehicleServices.GetServiceTypeByIdAsync (model.ServiceTypeId);
-            var ServicesStatus = await _vehicleServices.GetServicesStatusByIdAsync (model.StatusId);
+            var vehicle = await _vehicleServices.GetVehicleByIdAsync(model.VehicleId);
+            var ServiceType = await _vehicleServices.GetServiceTypeByIdAsync(model.ServiceTypeId);
+            var ServicesStatus = await _vehicleServices.GetServicesStatusByIdAsync(model.StatusId);
             var price = await _vehicleServices.GetPriceById(model.PriceId);
 
 
-            var service = new Service () {
+            var service = new Service()
+            {
                 Price = price,
                 Date = model.Date,
                 Status = ServicesStatus,
                 ServiceType = ServiceType
             };
 
-            var successful = await _vehicleServices.SaveOrUpdateAsync (service);
+            var successful = await _vehicleServices.SaveOrUpdateAsync(service);
 
-            if (vehicle.Services == null) {
-                vehicle.Services = new List<Service> ();
+            if (vehicle.Services == null)
+            {
+                vehicle.Services = new List<Service>();
             }
 
-            vehicle.Services.Add (service);
+            vehicle.Services.Add(service);
 
-            successful = await _vehicleServices.SaveOrUpdateAsync (vehicle);
+            successful = await _vehicleServices.SaveOrUpdateAsync(vehicle);
 
-            if (!successful) {
-                return BadRequest ("Could not add item.");
+            if (!successful)
+            {
+                return BadRequest("Could not add item.");
             }
 
-            return RedirectToAction ("Index");
+            return RedirectToAction("Index");
         }
     }
 }

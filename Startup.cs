@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -33,18 +35,27 @@ namespace CarServiceFronted
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-services.AddDbContext<AppDbContext>(options=>
-              options.UseSqlite(
-                            Configuration.GetConnectionString("DefaultConnection")));
 
-             services.AddScoped<IVehicleServices, VehicleServices>();
-             services.AddScoped<IBrandServices, BrandServices>();
+            services.AddDefaultIdentity<IdentityUser>()
+                           .AddRoles<IdentityRole>()
+                           .AddDefaultUI(UIFramework.Bootstrap4)
+                           .AddEntityFrameworkStores<AppDbContext>();
+
+            services.AddDbContext<AppDbContext>(options =>
+                          options.UseSqlite(
+                                        Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IVehicleServices, VehicleServices>();
+            services.AddScoped<IBrandServices, BrandServices>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app,
+                   IHostingEnvironment env,
+                    RoleManager<IdentityRole> roleManager,
+                UserManager<IdentityUser> userManager)
         {
             if (env.IsDevelopment())
             {
@@ -61,12 +72,17 @@ services.AddDbContext<AppDbContext>(options=>
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Vehicles}/{action=Index}/{id?}");
             });
+
+            RolesAndUsersInitializer.SeedRole(roleManager);
+            RolesAndUsersInitializer.SeedUsers(userManager);
         }
     }
 }

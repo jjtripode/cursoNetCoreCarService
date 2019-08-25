@@ -34,3 +34,7 @@ D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\DetailsServicePartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Users\AddNewUserPartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AdminActionsPartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditUserPartial.g.cshtml.cs

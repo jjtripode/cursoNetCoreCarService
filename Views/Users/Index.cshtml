@@ -1,0 +1,87 @@
+﻿@model UsersViewModel; 
+
+ @{ ViewData["Title"] = "Usuarios"; }
+<div class="panel panel-default todo-panel">
+    <div class="panel-heading">@ViewData["Title"]</div>
+    
+<table id="usersTable" class="table table-hover">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Email</td>
+                <td>Roles </td>
+                <td>Editar</td>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model.Users) 
+        {
+       <tr>
+           <td>
+              @item.IdentityUser.UserName
+           </td>
+           <td>
+              @item.IdentityUser.Email
+           </td>
+           <td>
+              @item.RolesToString()
+           </td>
+               <td  class="EditUser" userId="@item.IdentityUser.Id" > 
+                <span class="table-remove">
+                <button type="button"
+                  class="btn btn-danger btn-rounded btn-sm my-0">
+                  Editar Rol
+                  </button>
+                  </span> 
+            </td> 
+        </tr>
+        }
+    </table>
+    
+<div class="modal fade" id="editUserModel">
+
+</div>
+
+
+    <div class="panel-footer add-item-form">
+        
+        @await Html.PartialAsync("AddNewUserPartial", Model.GetAddNewUserViewModel())
+
+    </div>
+</div>
+
+
+
+@section Scripts{
+	<script type="text/javascript">
+
+ $(function () {
+
+           $("#usersTable .EditUser").click(function () {
+             
+                var userId = $(this).closest("tr").find("td").eq(3).attr("userId");
+                $.ajax({
+                    type: "Get",
+                    url: "/Users/EditUser",
+                    data: 'userId=' + userId,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                         $('#editUserModel').html('');
+                        $('#editUserModel').html(response);
+                       $("#editUserModel").modal();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+           });
+
+           return false;
+     });
+	
+	</script>
+}

@@ -49,7 +49,7 @@
     </table>
 
     
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="createNewServiceDialog">
 
 </div>
 <div class="modal fade" id="DetailsServieDialog">
@@ -69,18 +69,10 @@
 	<script type="text/javascript">
 
  $(function () {
- $("#dialog").dialog({
-                autoOpen: false,
-                modal: true,
-                title: "Agregar Servicio"
-            });
-
-
+ 
            $("#vehiclesTable .CrearService").click(function () {
              
                 var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
-
-              
 
                 $.ajax({
                     type: "Get",
@@ -89,9 +81,14 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "html",
                     success: function (response) {
-                         $('#myModal').html('');
-                        $('#myModal').html(response);
-                       $("#myModal").modal();
+                         $('#createNewServiceDialog').html('');
+                        $('#createNewServiceDialog').html(response);
+                        $('#dtpDateService').datepicker({
+                            format: 'dd/mm/yyyy',
+                            uiLibrary: 'bootstrap4',
+                            setDate: new Date()
+                        });
+                       $("#createNewServiceDialog").modal();
                     },
                     failure: function (response) {
                         alert(response.responseText);
@@ -103,8 +100,9 @@
            });
 
            $("#vehiclesTable .DetalleService").click(function () {
-              var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
               
+              var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
+              alert(vehicleId);
                 $.ajax({
                     type: "Get",
                     url: "/Vehicles/DetailsService",
@@ -114,13 +112,18 @@
                     success: function (response) {
                         $('#DetailsServieDialog').html('');
                         $('#DetailsServieDialog').html(response);
+                        
                         $('#DetailsServieDialog').modal();
                     },
                     failure: function (response) {
-                        alert('failure: ' + response.responseText);
+                       
+                        $('#DetailsServieDialog').html('');
+                        $('#DetailsServieDialog').html(response);
                     },
                     error: function (response) {
-                        alert('error: ' + response.responseText);
+                        $('#DetailsServieDialog').html('');
+                        $('#DetailsServieDialog').html(response);
+                        
                     }
                 });
            });

@@ -9,17 +9,31 @@ namespace CursoNetCoreCarService.Entities
         public static void SeedRole(RoleManager<IdentityRole> roleManager)
         {
             if (roleManager.Roles
-                .Where(x => x.Name == Roles.AdministratorRole)
-                .SingleOrDefaultAsync().Result != null)
-                return;
+                .Where(x => x.Name == Roles.Administrator)
+                .SingleOrDefaultAsync().Result == null)
 
-            var testAdmin = new IdentityRole
             {
-                Name = Roles.AdministratorRole,
-                NormalizedName = Roles.AdministratorRole.ToUpper()
-            };
+                var adminRol = new IdentityRole
+                {
+                    Name = Roles.Administrator,
+                    NormalizedName = Roles.Administrator.ToUpper()
+                };
 
-            IdentityResult result = roleManager.CreateAsync(testAdmin).Result;
+                roleManager.CreateAsync(adminRol);
+            }
+
+            if (roleManager.Roles
+              .Where(x => x.Name == Roles.Vendedor)
+              .SingleOrDefaultAsync().Result == null)
+            {
+                var VendedorRol = new IdentityRole
+                {
+                    Name = Roles.Vendedor,
+                    NormalizedName = Roles.Vendedor.ToUpper()
+                };
+
+                roleManager.CreateAsync(VendedorRol);
+            }
         }
 
         public static void SeedUsers(UserManager<IdentityUser> userManager)
@@ -39,7 +53,7 @@ namespace CursoNetCoreCarService.Entities
 
             if (result.Succeeded)
             {
-                userManager.AddToRoleAsync(testAdmin, Roles.AdministratorRole).Wait();
+                userManager.AddToRoleAsync(testAdmin, Roles.Administrator).Wait();
             }
         }
     }

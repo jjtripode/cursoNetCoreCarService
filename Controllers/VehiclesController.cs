@@ -18,7 +18,6 @@ namespace CarServiceFronted.Controllers
 
         private readonly UserManager<IdentityUser> _userManager;
 
-
         public VehiclesController(
             IVehicleServices vehicleService
         , IBrandServices brandServices,
@@ -30,6 +29,8 @@ namespace CarServiceFronted.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null) return Challenge();
 
             var vehicleViewModel = new VehicleViewModel()
             {
@@ -56,11 +57,8 @@ namespace CarServiceFronted.Controllers
             };
 
             return PartialView("DetailsServicePartial", detailServicesViewModel);
-
-
         }
 
-        [Authorize]
         private async Task<AddVehicleViewModel> GetAddVehicleViewModel()
         {
             var addVehicleViewModel = new AddVehicleViewModel();
@@ -127,7 +125,6 @@ namespace CarServiceFronted.Controllers
 
             return PartialView("AddServicePartial", addServiceViewModel);
         }
-
 
         [HttpPost]
         [Authorize]

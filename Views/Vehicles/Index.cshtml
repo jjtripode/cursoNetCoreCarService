@@ -1,21 +1,20 @@
 ﻿@model VehicleViewModel; 
 @using CarServiceFronted.Extensions;
-@using Humanizer;
-
- @{ ViewData["Title"] = "Services History"; }
+@using Humanizer; 
+@{ ViewData["Title"] = "Services History"; }
 <div class="panel panel-default todo-panel">
     <div class="panel-heading">@ViewData["Title"]</div>
-   
+
     <table id="vehiclesTable" class="table table-hover">
         <thead>
             <tr>
                 <td>&#x2714;</td>
                 <td>Marca</td>
                 <td>Model</td>
-                <td>Año</td>
+                <td>Antiguedad</td>
                 <td>Patente</td>
                 <td>Proximo Service</td>
-                <td>Crear Service</td> 
+                <td>Crear Service</td>
                 <td>Detalle Services</td>
             </tr>
         </thead>
@@ -26,44 +25,46 @@
             </td>
             <td>@item.Brand</td>
             <td>@item.Model</td>
-            <td>@item.ManufacturingDate</td>
+            <td>@item.ManufacturingDate.Humanize()</td>
             <td>@item.CarLicensePlate</td>
             <td>@item.GetNextCarServices()</td>
-            <td  class="CrearService" vehicleId="@item.ID" > 
+            <td class="CrearService" vehicleId="@item.ID">
                 <span class="table-remove">
                 <button type="button"
                   class="btn btn-danger btn-rounded btn-sm my-0">Agregar Service
                   </button>
-                  </span> 
-            </td> 
-            <td  class="DetalleService" vehicleId="@item.ID"> 
-                                <span class="table-remove">
+                  </span>
+            </td>
+            <td class="DetalleService" vehicleId="@item.ID">
+                <span class="table-remove">
                 <button type="button"
                   class="btn btn-danger btn-rounded btn-sm my-0">Detalle Servicios
                   </button>
-                  </span> 
-                 </td> 
-            
+                  </span>
+            </td>
+
         </tr>
         }
     </table>
 
+<<<<<<< HEAD
     
 <div class="modal fade" id="createNewServiceDialog">
+=======
+    <div class="modal fade" id="myModal">
+>>>>>>> 0b875ab950edfbf4df447d8c256316d960170838
 
-</div>
-<div class="modal fade" id="DetailsServieDialog">
+    </div>
+    <div class="modal fade" id="DetailsServieDialog">
 
-</div>
+    </div>
 
     <div class="panel-footer add-item-form">
-        
+
         @await Html.PartialAsync("AddVehiclePartial", Model.AddVehicleViewModel)
 
     </div>
 </div>
-
-
 
 @section Scripts{
 	<script type="text/javascript">

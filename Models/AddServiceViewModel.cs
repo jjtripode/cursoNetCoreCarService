@@ -22,7 +22,7 @@ namespace CarServiceFronted.Models
         public ServiceStatus[] StatusList{ get; set; }
         public ServiceType[] ServicesType{ get; set; }
 
-        [Required]
+        [Required(ErrorMessage="")]
         public Guid ServiceTypeId{ get; set; }
         [Required]
         public Guid VehicleId { get;  set; }

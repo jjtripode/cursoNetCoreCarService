@@ -41,6 +41,7 @@ namespace CarServiceFronted
                            .AddDefaultUI(UIFramework.Bootstrap4)
                            .AddEntityFrameworkStores<AppDbContext>();
 
+
             services.AddDbContext<AppDbContext>(options =>
                           options.UseSqlite(
                                         Configuration.GetConnectionString("DefaultConnection")));

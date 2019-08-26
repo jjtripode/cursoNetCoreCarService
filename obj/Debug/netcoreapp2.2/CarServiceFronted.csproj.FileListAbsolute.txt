@@ -70,3 +70,7 @@ C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\CarServiceFronted
 C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\CarServiceFronted.dll
 C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\CarServiceFronted.pdb
 C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\CarServiceFronted.csproj.CopyComplete
+C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AdminActionsPartial.g.cshtml.cs
+C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Users\AddNewUserPartial.g.cshtml.cs
+C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditUserPartial.g.cshtml.cs
+C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs

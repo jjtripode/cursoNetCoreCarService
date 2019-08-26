@@ -7,7 +7,7 @@ namespace  CursoNetCoreCarService.Entities
 {
     public static class Roles
     {
-        public const string AdministratorRole = "Administrator";
+        public const string Administrator = "Administrator";
         public const string Vendedor= "Vendedor";
     }
 }

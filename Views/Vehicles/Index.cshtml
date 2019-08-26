@@ -25,7 +25,7 @@
             </td>
             <td>@item.Brand</td>
             <td>@item.Model</td>
-            <td>@item.ManufacturingDate.Humanize()</td>
+            <td>@item.ManufacturingDate.Antiguedad()</td>
             <td>@item.CarLicensePlate</td>
             <td>@item.GetNextCarServices()</td>
             <td class="CrearService" vehicleId="@item.ID">
@@ -47,7 +47,8 @@
         }
     </table>
 
-    <div class="modal fade" id="myModal">
+    
+<div class="modal fade" id="createNewServiceDialog">
 
     </div>
     <div class="modal fade" id="DetailsServieDialog">
@@ -62,69 +63,81 @@
 </div>
 
 @section Scripts{
-<script type="text/javascript">
-    $(function() {
+	<script type="text/javascript">
 
-        $('#dtpDateService').datepicker({
-            format: 'dd/mm/yyyy',
-            uiLibrary: 'bootstrap4',
-            setDate: new Date()
-        });
+ $(function () {
 
-        $("#dialog").dialog({
-            autoOpen: false,
-            modal: true,
-            title: "Agregar Servicio"
-        });
 
-        $("#vehiclesTable .CrearService").click(function() {
+ $('#ManufacturingDatepicker').datepicker({
+                            format: 'dd/mm/yyyy',
+                            uiLibrary: 'bootstrap4',
+                            setDate: new Date()
+                        });
 
-            var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
+ 
+           $("#vehiclesTable .CrearService").click(function () {
+             
+                var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
 
-            $.ajax({
-                type: "Get",
-                url: "/Vehicles/CreateService",
-                data: 'vehicleId=' + vehicleId,
-                contentType: "application/json; charset=utf-8",
-                dataType: "html",
-                success: function(response) {
-                    $('#myModal').html('');
-                    $('#myModal').html(response);
-                    $("#myModal").modal();
-                },
-                failure: function(response) {
-                    alert(response.responseText);
-                },
-                error: function(response) {
-                    alert(response.responseText);
-                }
-            });
-        });
+                $.ajax({
+                    type: "Get",
+                    url: "/Vehicles/CreateService",
+                    data: 'vehicleId=' + vehicleId,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                         $('#createNewServiceDialog').html('');
+                        $('#createNewServiceDialog').html(response);
+                        $('#dtpDateService').datepicker({
+                            format: 'dd/mm/yyyy',
+                            uiLibrary: 'bootstrap4',
+                            setDate: new Date()
+                        });
+                       $("#createNewServiceDialog").modal();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+           });
 
-        $("#vehiclesTable .DetalleService").click(function() {
-            var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
+           $("#vehiclesTable .DetalleService").click(function () {
+              
+              var vehicleId = $(this).closest("tr").find("td").eq(6).attr("vehicleId");
+             
+                $.ajax({
+                    type: "Get",
+                    url: "/Vehicles/DetailsService",
+                    data: 'vehicleId=' + vehicleId,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        $('#DetailsServieDialog').html('');
+                        $('#DetailsServieDialog').html(response);
+                        
+                        $('#DetailsServieDialog').modal();
+                    },
+                    failure: function (response) {
+                       
+                        $('#DetailsServieDialog').html('');
+                        $('#DetailsServieDialog').html(response);
+                    },
+                    error: function (response) {
+                        $('#DetailsServieDialog').html('');
+                        $('#DetailsServieDialog').html(response);
+                        
+                    }
+                });
+           });
 
-            $.ajax({
-                type: "Get",
-                url: "/Vehicles/DetailsService",
-                data: 'vehicleId=' + vehicleId,
-                contentType: "application/json; charset=utf-8",
-                dataType: "html",
-                success: function(response) {
-                    $('#DetailsServieDialog').html('');
-                    $('#DetailsServieDialog').html(response);
-                    $('#DetailsServieDialog').modal();
-                },
-                failure: function(response) {
-                    alert('failure: ' + response.responseText);
-                },
-                error: function(response) {
-                    alert('error: ' + response.responseText);
-                }
-            });
-        });
+           return false;
+     });
 
-        return false;
-    });
-</script>
+
+
+	
+	</script>
 }

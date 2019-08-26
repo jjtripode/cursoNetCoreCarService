@@ -48,6 +48,7 @@ namespace CarServiceFronted
 
             services.AddScoped<IVehicleServices, VehicleServices>();
             services.AddScoped<IBrandServices, BrandServices>();
+            services.AddScoped<ICatalogService, CatalogService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

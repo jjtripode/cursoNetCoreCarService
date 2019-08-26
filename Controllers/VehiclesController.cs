@@ -13,18 +13,19 @@ namespace CarServiceFronted.Controllers
     public class VehiclesController : Controller
     {
         private readonly IVehicleServices _vehicleServices;
-
         private readonly IBrandServices _brandServices;
-
+        private readonly ICatalogService _catalogService;
         private readonly UserManager<IdentityUser> _userManager;
 
         public VehiclesController(
-            IVehicleServices vehicleService
-        , IBrandServices brandServices,
-        UserManager<IdentityUser> userManager)
+            IVehicleServices vehicleService,
+            IBrandServices brandServices,
+            ICatalogService catalogService,
+            UserManager<IdentityUser> userManager)
         {
             _vehicleServices = vehicleService;
             _brandServices = brandServices;
+            _catalogService = catalogService;
             _userManager = userManager;
         }
         public async Task<IActionResult> Index()
@@ -36,8 +37,8 @@ namespace CarServiceFronted.Controllers
             {
                 Items = await _vehicleServices.GetAllVehiclesAsync(),
 
-                StatusList = await _vehicleServices.GetAllServicesStatusAsync(),
-                ServicesType = await _vehicleServices.GetAllServicesTypeAsync(),
+                StatusList = await _catalogService.GetAllServicesStatusAsync(),
+                ServicesType = await _catalogService.GetAllServicesTypeAsync(),
                 AddVehicleViewModel = await this.GetAddVehicleViewModel()
             };
 
@@ -118,9 +119,9 @@ namespace CarServiceFronted.Controllers
 
             var addServiceViewModel = new AddServiceViewModel()
             {
-                StatusList = await _vehicleServices.GetAllServicesStatusAsync(),
-                ServicesType = await _vehicleServices.GetAllServicesTypeAsync(),
-                Prices = await _vehicleServices.GetAllPricesAsync(),
+                StatusList = await _catalogService.GetAllServicesStatusAsync(),
+                ServicesType = await _catalogService.GetAllServicesTypeAsync(),
+                Prices = await _catalogService.GetAllPricesAsync(),
                 VehicleId = vehicleId
             };
 
@@ -138,9 +139,9 @@ namespace CarServiceFronted.Controllers
             }
 
             var vehicle = await _vehicleServices.GetVehicleByIdAsync(model.VehicleId);
-            var ServiceType = await _vehicleServices.GetServiceTypeByIdAsync(model.ServiceTypeId);
-            var ServicesStatus = await _vehicleServices.GetServicesStatusByIdAsync(model.StatusId);
-            var price = await _vehicleServices.GetPriceById(model.PriceId);
+            var ServiceType = await _catalogService.GetServiceTypeByIdAsync(model.ServiceTypeId);
+            var ServicesStatus = await _catalogService.GetServicesStatusByIdAsync(model.StatusId);
+            var price = await _catalogService.GetPriceById(model.PriceId);
 
 
             var service = new Service()

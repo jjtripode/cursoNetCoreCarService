@@ -34,6 +34,12 @@ D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Vehicles\DetailsServicePartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
 D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+<<<<<<< HEAD
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Users\AddNewUserPartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AdminActionsPartial.g.cshtml.cs
+D:\Practicas\CursoNetCoreCarService\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditUserPartial.g.cshtml.cs
+=======
 C:\Users\cisco\Documents\repoVehiculos\bin\Debug\netcoreapp2.2\CarServiceFronted.deps.json
 C:\Users\cisco\Documents\repoVehiculos\bin\Debug\netcoreapp2.2\CarServiceFronted.runtimeconfig.json
 C:\Users\cisco\Documents\repoVehiculos\bin\Debug\netcoreapp2.2\CarServiceFronted.runtimeconfig.dev.json
@@ -74,3 +80,5 @@ C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Share
 C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Users\AddNewUserPartial.g.cshtml.cs
 C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditUserPartial.g.cshtml.cs
 C:\Users\cisco\Documents\repoVehiculos\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
+>>>>>>> 0b875ab950edfbf4df447d8c256316d960170838
+>>>>>>> 85a30f77e618bdeb4a4bfbfb56da842590b8b059
